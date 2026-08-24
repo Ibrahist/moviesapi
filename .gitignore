@@ -1,0 +1,49 @@
+node_modules
+# Keep environment variables out of version control
+.env
+
+/src/generated/prisma
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency directories (Never commit these)
+node_modules/
+jspm_packages/
+web_modules/
+
+# Test directory and coverage outputs
+coverage/
+.nyc_output/
+
+# Build and Production outputs
+dist/
+build/
+.next/
+out/
+
+# Environment variables and secrets (CRITICAL: Keep your API keys and databases safe)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.env
+*.pem
+
+# IDEs and Text Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Operating System files
+.DS_Store
+Thumbs.db
