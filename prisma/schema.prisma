@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+  // output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+
+  movies         Movie[]         @relation("Movie Creator")
+  watchlistItems WatchListItem[]
+}
+
+model Movie {
+  id          String   @id @default(uuid())
+  title       String
+  overview    String?
+  releaseYear Int
+  genre       String[] @default([])
+  runtime     Int
+  posterUrl   String?
+  createdBy   String
+  createdAt   DateTime @default(now())
+
+  creator        User            @relation("Movie Creator", fields: [createdBy], references: [id], onDelete: Cascade)
+  watchlistItems WatchListItem[]
+}
+
+model WatchListItem {
+  id        String          @id @default(uuid())
+  userId    String
+  movieId   String
+  status    WatchListStatus @default(PLANNING)
+  rating    Int?
+  notes     String?
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @default(now())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  movie Movie @relation(fields: [movieId], references: [id], onDelete: Cascade)
+}
+
+enum WatchListStatus {
+  PLANNING
+  WATCHING
+  COMPLETED
+  DROPPED
+}
