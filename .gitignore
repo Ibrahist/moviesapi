@@ -26,7 +26,6 @@ build/
 .next/
 out/
 
-# Environment variables and secrets (CRITICAL: Keep your API keys and databases safe)
 .env
 .env.local
 .env.development.local
