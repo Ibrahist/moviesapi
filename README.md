@@ -1,7 +1,10 @@
 # 🎬 MoviesAPI
 
-
 A RESTful API built with **Node.js, Express, Prisma ORM, and PostgreSQL** for managing movie-related data. The project provides a foundation for building applications that store, retrieve, and manage movie information through HTTP endpoints.
+
+🚧 Project Status: In Progress
+MoviesAPI is still under active development. New features, improvements, and bug fixes are being worked on, so some functionality may change as the project evolves.
+
 
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge\&logo=nodedotjs\&logoColor=white)](https://nodejs.org/)
 [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge\&logo=express\&logoColor=white)](https://expressjs.com/)
